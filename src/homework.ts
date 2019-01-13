@@ -6,7 +6,7 @@ abstract class Car {
     public abstract refuel(): void;
     }
 
-class Ford extends Car{
+class Fiesta extends Car{
         
     constructor(mileage: number, fuel: number) {
         super();
@@ -14,6 +14,9 @@ class Ford extends Car{
         this.fuel = fuel
     }
     public drive(distance: number):void {
+        if (distance < 0) {
+            return console.log ("Введите число больше 0");
+        }
         this.mileage -= distance;
         this.fuel -= distance * 0.05;
         if (this.fuel <= 0) {
@@ -21,6 +24,9 @@ class Ford extends Car{
         }
     } 
     public refuel (liters: number): void {
+        if (liters < 0) {
+            return console.log ("Введите число больше 0");
+        }
         this.fuel += liters;
     }  
     public get mileage(): number {

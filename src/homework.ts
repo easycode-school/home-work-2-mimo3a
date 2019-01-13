@@ -6,31 +6,31 @@ abstract class Car {
     public abstract refuel(): void;
     }
 
-    class Ford extends Car{
+class Ford extends Car{
         
-        constructor(mileage: number, fuel: number) {
-            super();
-            this.mileage = mileage;
-            this.fuel = fuel
+    constructor(mileage: number, fuel: number) {
+        super();
+        this.mileage = mileage;
+        this.fuel = fuel
+    }
+    public drive(distance: number):void {
+        this.mileage -= distance;
+        this.fuel -= distance * 0.05;
+        if (this.fuel <= 0) {
+            console.log("Вам необходимо запрввиться");
         }
-         public drive(distance: number):void {
-            this.mileage -= distance;
-            this.fuel -= distance * 0.05;
-            if (this.fuel <= 0) {
-                console.log("Вам необходимо запрввиться");
-            }
-       } 
-        public refuel (liters: number): void {
-           this.fuel += liters;
-       }  
-       public get mileage(): number {
-           return this.mileage;
-       }
-       public get fuel(): number {
-           return this.fuel;
-       }
+    } 
+    public refuel (liters: number): void {
+        this.fuel += liters;
+    }  
+    public get mileage(): number {
+        return this.mileage;
+    }
+    public get fuel(): number {
+         return this.fuel;
+    }
 
-        }
+}
     
 
 
